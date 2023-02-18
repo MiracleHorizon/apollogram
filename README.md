@@ -1,7 +1,7 @@
 # Apollogram. Messanger App.
 
 Frontend:
-- Next.js (appDir)
+- React.js
 - Apollo Client, GraphQL
 - TailwindCSS
 - i18next
@@ -9,7 +9,7 @@ Frontend:
 Backend: 
 - Node.js, Nest.js
 - PostgreSQL, Prisma
-- ApolloServer, GraphQL
+- Apollo Server, GraphQL
 - JsonWebToken
 
 Общее:
