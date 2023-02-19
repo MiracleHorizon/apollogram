@@ -1,0 +1,45 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type UserEntity {
+  id: ID!
+  email: String!
+  login: String!
+  phoneNumber: String!
+  hashedPassword: String!
+  createdAt: DateTime!
+  hashedRefreshToken: String
+  avatar: String
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  findOneUser(id: String!): UserEntity!
+}
+
+type Mutation {
+  registerLocal(dto: CreateUserInput!): UserEntity!
+  loginLocal(dto: LoginInput!): UserEntity!
+  logout: Void!
+  refresh: UserEntity!
+}
+
+input CreateUserInput {
+  login: String!
+  email: String!
+  password: String!
+  phoneNumber: String!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+"""Represents NULL values"""
+scalar Void
