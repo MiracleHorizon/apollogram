@@ -1,10 +1,21 @@
 import { useCallback, useEffect } from 'react'
-import { useMutation } from '@apollo/client'
+import { gql, useMutation } from '@apollo/client'
 import Cookies from 'js-cookie'
 
-import { REFRESH_MUTATION } from '@lib/auth.schemas'
 import { useAuthStore } from '@stores/auth.store'
 import type { UserModel } from '@models/user.model'
+
+const REFRESH_MUTATION = gql`
+  mutation refresh {
+    refresh {
+      id
+      email
+      login
+      phoneNumber
+      avatar
+    }
+  }
+`
 
 export function useRefreshAuth() {
   const [refreshAuthMutation, { data, called, loading, error }] =
