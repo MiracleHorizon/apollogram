@@ -1,12 +1,14 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client'
 
-// const uri = `${process.env.SERVER_API}/graphql`
-const uri = 'http://localhost:4200/graphql'
+import { SERVER_API } from '@utils/constants'
+
+const uri = SERVER_API + '/graphql'
 const cache = new InMemoryCache()
 
 export const apolloClient = new ApolloClient({
   uri,
   cache,
+  name: 'Apollogram',
   credentials: 'include',
   connectToDevTools: true
 })

@@ -1,4 +1,4 @@
-// import { StrictMode } from 'react'
+import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ApolloProvider } from '@apollo/client'
 
@@ -9,9 +9,9 @@ import './index.css'
 const rootElement = document.getElementById('root') as HTMLElement
 
 createRoot(rootElement).render(
-  // <StrictMode>
+  <StrictMode>
     <ApolloProvider client={apolloClient}>
       <App />
     </ApolloProvider>
-  // </StrictMode>
+  </StrictMode>
 )
