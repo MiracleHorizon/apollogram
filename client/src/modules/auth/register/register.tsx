@@ -4,12 +4,12 @@ import RegisterForm from './register-form'
 import { useRegister } from '@hooks/use-register'
 
 const Register = () => {
-  const { onSubmit } = useRegister()
+  const { handleSubmit } = useRegister()
 
   return (
     <AuthLayout>
       <AuthMain title='Register'>
-        <RegisterForm onSubmit={onSubmit} />
+        <RegisterForm onSubmit={handleSubmit} />
       </AuthMain>
     </AuthLayout>
   )

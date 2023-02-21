@@ -28,7 +28,6 @@ export function useRefreshAuth() {
   }, [])
 
   useEffect(() => {
-    if (!Cookies.get('refreshToken')) return
     void refreshAuthMutation()
   }, [refreshAuthMutation])
 

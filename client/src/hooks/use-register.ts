@@ -34,7 +34,7 @@ export function useRegister() {
     useMutation<MutationResult>(REGISTER_MUTATION)
   const login = useAuthStore(state => state.login)
 
-  const onSubmit = useCallback(
+  const handleSubmit = useCallback(
     (registerBody: RegisterBody) => {
       void registerMutation({ variables: registerBody })
     },
@@ -46,7 +46,7 @@ export function useRegister() {
     login(data.registerLocal)
   }, [data, login])
 
-  return { onSubmit }
+  return { handleSubmit }
 }
 
 interface MutationResult {

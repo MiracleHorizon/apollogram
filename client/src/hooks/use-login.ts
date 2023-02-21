@@ -25,27 +25,26 @@ export function useLogin() {
   const [loginMutation, { data }] = useMutation<MutationResult>(LOGIN_MUTATION)
   const login = useAuthStore(state => state.login)
 
-  const handleLocationState = useCallback(() => {
-    if ('from' in location.state) {
+  const handleRedirectFrom = useCallback(() => {
+    if (location?.state?.from) {
       navigate(location.state.from)
     }
   }, [location, navigate])
 
-  const onSubmit = useCallback(
+  const handleSubmit = useCallback(
     (loginBody: LoginBody) => {
-      void loginMutation({ variables: loginBody }).then(() => {
-        handleLocationState()
-      })
+      void loginMutation({ variables: loginBody })
     },
-    [loginMutation, handleLocationState]
+    [loginMutation]
   )
 
   useEffect(() => {
     if (!data) return
     login(data.loginLocal)
-  }, [data, login])
+    handleRedirectFrom()
+  }, [data, login, handleRedirectFrom])
 
-  return { onSubmit }
+  return { handleSubmit }
 }
 
 interface MutationResult {
