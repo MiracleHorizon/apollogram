@@ -1,6 +1,6 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client'
 
-import { SERVER_API } from '@utils/constants'
+import { SERVER_API } from '@common/utils/constants'
 
 const uri = SERVER_API + '/graphql'
 const cache = new InMemoryCache()

@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import HomePage from '@pages/home'
-import RegisterPage from '@pages/register'
-import LoginPage from '@pages/login'
+import RegisterPage from '@pages/auth/register'
+import LoginPage from '@pages/auth/login'
 import NotFoundPage from '@pages/404'
 
 import RequireAuthRoute from '@hoc/require-auth-route'

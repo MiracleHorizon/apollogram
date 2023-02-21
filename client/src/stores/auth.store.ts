@@ -3,22 +3,17 @@ import { create } from 'zustand'
 import type { UserModel } from '@models/user.model'
 
 interface AuthStore {
-  isAuth: boolean
   user: UserModel | null
+  isAuth: () => boolean
   login: (user: UserModel) => void
   logout: () => void
 }
 
-export const useAuthStore = create<AuthStore>(setState => ({
-  isAuth: false,
+export const useAuthStore = create<AuthStore>((set, get) => ({
   user: null,
 
-  login: (user: UserModel) => setState(() => ({
-    user,
-    isAuth: true
-  })),
-  logout: () => setState(() => ({
-    user: null,
-    isAuth: false
-  }))
+  isAuth: () => Boolean(get().user),
+
+  login: (user: UserModel) => set({ user }),
+  logout: () => set({ user: null })
 }))

@@ -11,6 +11,8 @@ export default defineConfig({
       '@modules': path.resolve(__dirname, './src/modules'),
       '@common': path.resolve(__dirname, './src/common'),
       '@hoc': path.resolve(__dirname, './src/common/hoc'),
+      '@utils': path.resolve(__dirname, './src/common/utils'),
+      '@helpers': path.resolve(__dirname, './src/common/utils/helpers'),
       '@lib': path.resolve(__dirname, './src/lib'),
       '@router': path.resolve(__dirname, './src/router'),
       '@stores': path.resolve(__dirname, './src/stores'),
@@ -18,8 +20,7 @@ export default defineConfig({
       '@components': path.resolve(__dirname, './src/components'),
       '@ui': path.resolve(__dirname, './src/components/ui'),
       '@hooks': path.resolve(__dirname, './src/hooks'),
-      '@models': path.resolve(__dirname, './src/models'),
-      '@utils': path.resolve(__dirname, './src/utils')
+      '@models': path.resolve(__dirname, './src/models')
     }
   }
 })

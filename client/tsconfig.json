@@ -35,6 +35,8 @@
       "@modules/*": ["./modules/*"],
       "@common/*": ["./common/*"],
       "@hoc/*": ["./common/hoc/*"],
+      "@utils/*": ["./common/utils/*"],
+      "@helpers/*": ["./common/utils/helpers/*"],
       "@lib/*": ["./lib/*"],
       "@router/*": ["./router/*"],
       "@stores/*": ["./stores/*"],
@@ -42,8 +44,7 @@
       "@components/*": ["./components/*"],
       "@ui/*": ["./components/ui/*"],
       "@hooks/*": ["./hooks/*"],
-      "@models/*": ["./models/*"],
-      "@utils/*": ["./utils/*"]
+      "@models/*": ["./models/*"]
     },
     "incremental": true
   },
