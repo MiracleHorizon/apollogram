@@ -1,4 +1,5 @@
 import { useCallback, useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { gql, useMutation } from '@apollo/client'
 
 import { useAuthStore } from '@stores/auth.store'
@@ -18,14 +19,25 @@ const LOGIN_MUTATION = gql`
 `
 
 export function useLogin() {
+  const location = useLocation()
+  const navigate = useNavigate()
+
   const [loginMutation, { data }] = useMutation<MutationResult>(LOGIN_MUTATION)
   const login = useAuthStore(state => state.login)
 
+  const handleLocationState = useCallback(() => {
+    if ('from' in location.state) {
+      navigate(location.state.from)
+    }
+  }, [location, navigate])
+
   const onSubmit = useCallback(
     (loginBody: LoginBody) => {
-      void loginMutation({ variables: loginBody })
+      void loginMutation({ variables: loginBody }).then(() => {
+        handleLocationState()
+      })
     },
-    [loginMutation]
+    [loginMutation, handleLocationState]
   )
 
   useEffect(() => {
