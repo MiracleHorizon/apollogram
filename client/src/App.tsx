@@ -1,6 +1,6 @@
 import AppRouter from './router'
 import OvalLoader from '@ui/oval-loader'
-import { useRefreshAuth } from '@hooks/use-refresh-auth'
+import { useRefreshAuth } from '@hooks/auth/use-refresh-auth'
 
 const App = () => {
   const { loading } = useRefreshAuth()

@@ -1,7 +1,7 @@
 import AuthLayout from '../layout'
 import AuthMain from '../components/auth-main'
 import RegisterForm from './register-form'
-import { useRegister } from '@hooks/use-register'
+import { useRegister } from '@hooks/auth/use-register'
 
 const Register = () => {
   const { handleSubmit } = useRegister()
