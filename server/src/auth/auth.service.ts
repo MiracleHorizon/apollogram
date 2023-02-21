@@ -1,8 +1,8 @@
 import {
   BadRequestException,
   ForbiddenException,
-  NotFoundException,
-  Injectable
+  Injectable,
+  NotFoundException
 } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 import { Response } from 'express'
@@ -125,8 +125,8 @@ export class AuthService {
     const tokens = await this.signTokens(id, email)
     await this.updateRefreshToken(id, tokens.refreshToken)
 
-    res.cookie('accessToken', tokens.accessToken)
-    res.cookie('refreshToken', tokens.refreshToken)
+    res.cookie('accessToken', tokens.accessToken, { httpOnly: true })
+    res.cookie('refreshToken', tokens.refreshToken, { httpOnly: true })
 
     return {
       ...excludeEntityField(user, ['hashedPassword', 'hashedRefreshToken'])
