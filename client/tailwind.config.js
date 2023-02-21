@@ -2,6 +2,7 @@
 const tailwindConfig = {
   content: ['./src/**/*.{ts,tsx,html}'],
   plugins: [],
+  darkMode: 'class',
   theme: {
     extend: {}
   }

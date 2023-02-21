@@ -35,6 +35,7 @@
       "@modules/*": ["./modules/*"],
       "@common/*": ["./common/*"],
       "@hoc/*": ["./common/hoc/*"],
+      "@theme/*": ["./common/theme/*"],
       "@utils/*": ["./common/utils/*"],
       "@helpers/*": ["./common/utils/helpers/*"],
       "@lib/*": ["./lib/*"],

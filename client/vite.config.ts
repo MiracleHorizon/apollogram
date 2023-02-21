@@ -11,6 +11,7 @@ export default defineConfig({
       '@modules': path.resolve(__dirname, './src/modules'),
       '@common': path.resolve(__dirname, './src/common'),
       '@hoc': path.resolve(__dirname, './src/common/hoc'),
+      '@theme': path.resolve(__dirname, './src/common/theme'),
       '@utils': path.resolve(__dirname, './src/common/utils'),
       '@helpers': path.resolve(__dirname, './src/common/utils/helpers'),
       '@lib': path.resolve(__dirname, './src/lib'),
