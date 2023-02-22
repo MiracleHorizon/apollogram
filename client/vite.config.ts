@@ -10,6 +10,7 @@ export default defineConfig({
       '@pages': path.resolve(__dirname, './src/pages'),
       '@modules': path.resolve(__dirname, './src/modules'),
       '@common': path.resolve(__dirname, './src/common'),
+      '@types': path.resolve(__dirname, './src/common/types'),
       '@hoc': path.resolve(__dirname, './src/common/hoc'),
       '@theme': path.resolve(__dirname, './src/common/theme'),
       '@utils': path.resolve(__dirname, './src/common/utils'),

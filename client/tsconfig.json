@@ -34,6 +34,7 @@
       "@pages/*": ["./pages/*"],
       "@modules/*": ["./modules/*"],
       "@common/*": ["./common/*"],
+      "@types/*": ["./common/type/*"],
       "@hoc/*": ["./common/hoc/*"],
       "@theme/*": ["./common/theme/*"],
       "@utils/*": ["./common/utils/*"],

@@ -4,7 +4,7 @@ import { ApolloProvider } from '@apollo/client'
 
 import App from './App'
 import { apolloClient } from '@lib/apollo-client'
-import { STRICT_MODE } from '@utils/constants'
+import { Mode } from '@common/types/mode'
 import './index.css'
 
 const rootElement = document.getElementById('root') as HTMLElement
@@ -15,4 +15,6 @@ const app = (
   </ApolloProvider>
 )
 
-appRoot.render(STRICT_MODE ? <StrictMode>{app}</StrictMode> : app)
+appRoot.render(
+  import.meta.env.MODE === Mode.DEV ? <StrictMode>{app}</StrictMode> : app
+)
